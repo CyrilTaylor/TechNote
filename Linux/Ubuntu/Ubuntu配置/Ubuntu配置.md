@@ -30,3 +30,5 @@ else
 fi
 ```
 
+提供编译程序必须软件包的列表信息
+> sudo apt-get install build-essential
