@@ -19,7 +19,7 @@ Root用户模式：
 
 预览：
 
-![Root用户终端显示](material/root.png)
+![Root用户终端显示](material/Root.png)
 
 
 ``` shell
