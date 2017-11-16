@@ -6,7 +6,7 @@
     - [1. 终端命令符](#1-终端命令符)
     - [git配置](#git配置)
         - [账号配置](#账号配置)
-        - [[git乱码问题](http://blog.csdn.net/tyro_java/article/details/53439537)](#git乱码问题httpblogcsdnnettyro_javaarticledetails53439537)
+        - [git乱码问题](#git乱码问题)
 - [Android工具安装](#android工具安装)
 
 <!-- /TOC -->
