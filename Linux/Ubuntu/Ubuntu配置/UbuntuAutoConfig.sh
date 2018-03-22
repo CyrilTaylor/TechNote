@@ -28,6 +28,12 @@ sudo apt remove android-tools-adb android-tools-fastboot
 git config --global user.email "CyrilTaylor@foxmail.com"
 git config --global user.name "Cyril Taylor"
 git config --global core.quotepath false
+# Password caching, The credential helper only works when you clone an HTTPS repository URL
+# Set git to use the credential memory cache
+git config --global credential.helper cache
+# Set the cache to timeout after 1 hour (setting is in seconds)
+git config --global credential.helper 'cache --timeout=3600'
+
 #git config --global gui.encoding utf-8
 #git config --global i18n.commitencoding utf-8
 

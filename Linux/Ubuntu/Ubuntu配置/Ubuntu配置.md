@@ -1,17 +1,19 @@
-# 1. Ubuntu配置
+# 1 Ubuntu配置
 
 <!-- TOC -->
 
-- [1. Ubuntu配置](#1-ubuntu配置)
-    - [1.1. 终端命令符](#11-终端命令符)
-    - [1.2. git配置](#12-git配置)
-        - [1.2.1. 账号配置](#121-账号配置)
-        - [1.2.2. git乱码问题](#122-git乱码问题)
-    - [1.3. Android工具安装](#13-android工具安装)
+- [1 Ubuntu配置](#1-ubuntu配置)
+    - [1.1 终端命令符](#11-终端命令符)
+    - [1.2 git配置](#12-git配置)
+        - [1.2.1 账号配置](#121-账号配置)
+        - [1.2.2 git乱码问题](#122-git乱码问题)
+        - [1.2.2 设置https的git库账号密码缓存](#122-设置https的git库账号密码缓存)
+    - [1.3 Android工具安装](#13-android工具安装)
 
 <!-- /TOC -->
 
-## 1.1. 终端命令符
+## 1.1 终端命令符
+
 普通用户模式：
 > PS1="\[\033[0;33m\]┌┼─ \[\033[0;36m\]\u\[\033[0m\]@\H\[\033[0m\033[0;33m\] ─┤├─ \[\033[0m\]\t \d\[\033[0;33m\] ─┤├─ \[\033[0;36m\]\w\[\033[0;33m\] ─┤ \n│\[\033[0;37m\] Suspend Process:\j Command Counts: \#\n\[\033[0;33m\]└┼─\[\033[0m\033[0;32m\]\$\[\033[0m\033[0;33m\]─┤▶\[\033[0m\]"
 预览：
@@ -24,7 +26,6 @@ Root用户模式：
 预览：
 
 ![Root用户终端显示](material/Root.png)
-
 
 ``` shell
 if [ `id -u` -eq 0 ]; then
@@ -40,13 +41,14 @@ fi
 提供编译程序必须软件包的列表信息
 > sudo apt-get install build-essential
 
-## 1.2. git配置
+## 1.2 git配置
 
-### 1.2.1. 账号配置
+### 1.2.1 账号配置
+
     > git config --global user.email "CyrilTaylor@foxmail.com"
     > git config --global user.name "Cyril Taylor"
 
-### 1.2.2. git乱码问题
+### 1.2.2 git乱码问题
 
    _[在git中出现中文乱码的解决方案](http://blog.csdn.net/tyro_java/article/details/53439537)_
 
@@ -70,7 +72,14 @@ fi
 
 - 使得 git log 可以正常显示中文（配合i18n.logoutputencoding = gbk)，在 /etc/profile 中添加：export LESSCHARSET=utf-8
 
-## 1.3. Android工具安装
+### 1.2.2 设置https的git库账号密码缓存
+
+```shell
+git config --global credential.helper cache
+git config --global credential.helper 'cache --timeout=3600'
+```
+
+## 1.3 Android工具安装
 
 ```shell
     sudo apt install build-essential bc g++-multilib libc6-dev lib32ncurses5 lib32ncurses5-dev lib32z1 unzip flex zip flex bison gperf curl zlib1g zlib1g-dev tofrodos libxml2-utils policycoreutils tree phablet-tools git openjdk-8-jdk repo
@@ -78,4 +87,3 @@ fi
 ```
 
 [test](E:\TechNote\C_C++\C C++常用关键字解析\C C++常用关键字解析.md)
-
