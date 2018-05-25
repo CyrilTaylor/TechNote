@@ -33,13 +33,21 @@ sudo apt update
 sudo apt full-upgrade
 # sudo apt-get install software-properties-common
 # sudo add-apt-repository ppa:openjdk-r/ppa
-sudo apt install build-essential bc g++-multilib libc6-dev lib32ncurses5 lib32ncurses5-dev lib32z1 unzip flex zip flex bison gperf curl zlib1g zlib1g-dev tofrodos libxml2-utils policycoreutils tree phablet-tools git openjdk-8-jdk repo libncurses5-dev libssl-dev openssl zlibc minizip libidn11-dev libidn11
+sudo apt install -y build-essential bc g++-multilib libc6-dev lib32ncurses5 lib32ncurses5-dev lib32z1 unzip flex vim zip flex bison gperf curl zlib1g zlib1g-dev tofrodos libxml2-utils policycoreutils tree repo git openjdk-8-jdk repo libncurses5-dev libssl-dev openssl zlibc minizip libidn11-dev libidn11
 if [ 'WSL' == ${DISTRO} ]; then
-    sudo apt remove android-tools-adb android-tools-fastboot
+    sudo apt remove -y android-tools-adb android-tools-fastboot
 fi
 
 if [ 'Ubuntu' == ${DISTRO} ]; then
-    sudo apt install wine-dev
+    #VSCode
+    wget https://vscode-update.azurewebsites.net/latest/linux-deb-x64/stable -O ~/vscode_latest_stable.deb
+    sudo dpkg -i ~/vscode_latest_stable.deb
+    rm -rf ~/vscode_latest_stable.deb
+    #Chrome
+    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O ~/google-chrome-stable_current_amd64.deb
+    sudo dpkg -i ~/google-chrome-stable_current_amd64.deb
+    rm -rf ~/google-chrome-stable_current_amd64.deb
+    sudo apt install -y wine-dev
 fi
 
 # git configuration
