@@ -20,9 +20,11 @@ if [ -f ~/.bashrc ]; then
         echo "" >> ~/.bashrc
         echo "# Custom Prompt with Cyril Style" >> ~/.bashrc
         echo "if [ \`id -u\` -eq 0 ]; then" >> ~/.bashrc
-        echo '    PS1="\[\033[0;31m\]\u\[\033[0;31m\]@\H\[\033[0;35m\] - \[\033[0;32m\]\t \d\[\033[0;35m\] - \[\033[0;31m\]\w\n\[\033[0;35m\]Suspend Process:\j Command Counts: \#\n\[\033[0;31m\]\\$\[\033[0;35m\]->\[\033[0m\]"' >> ~/.bashrc
+        echo '    PS1="\[\e[5;31m\]\u\[\e[5;31m\]@\H\[\e[0;35m\] - \[\e[0;32m\]\t \d\[\e[0;35m\] - \[\e[1;31m\]\w\n\[\e[0;35m\]Suspend Process:\j Command Counts: \#\n\[\e[0;31m\]\\$\[\e[0;35m\]->\[\e[0m\]"' >> ~/.bashrc
+        echo "elif [ \`id -u\` -le 1000 ]; then" >> ~/.bashrc
+        echo '    PS1="\[\e[0;33m\]\u\[\e[0;33m\]@\H\[\e[0;36m\] - \[\e[0;32m\]\t \d\[\e[0;36m\] - \[\e[0;33m\]\w\n\[\e[0;37m\]Suspend Process:\j Command Counts: \#\n\[\e[0;32m\]\$\[\e[0;33m\]->\[\e[0m\]"' >> ~/.bashrc
         echo "else" >> ~/.bashrc
-        echo '    PS1="\[\033[0;33m\]\u\[\033[0;33m\]@\H\[\033[0;36m\] - \[\033[0;32m\]\t \d\[\033[0;36m\] - \[\033[0;33m\]\w\n\[\033[0;37m\]Suspend Process:\j Command Counts: \#\n\[\033[0;32m\]\$\[\033[0;33m\]->\[\033[0m\]"' >> ~/.bashrc
+        echo '    PS1="\[\e[0;32m\]\u\[\e[0;32m\]@\H\[\e[0;36m\] - \[\e[0;32m\]\t \d\[\e[0;36m\] - \[\e[0;32m\]\w\n\[\e[0;37m\]Suspend Process:\j Command Counts: \#\n\[\e[0;32m\]\$\[\e[0;33m\]->\[\e[0m\]"' >> ~/.bashrc
         echo "fi" >> ~/.bashrc
         echo 'PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"' >> ~/.bashrc
         echo "" >> ~/.bashrc
