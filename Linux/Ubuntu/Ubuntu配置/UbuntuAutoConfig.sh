@@ -32,9 +32,8 @@ if [ -f ~/.bashrc ]; then
 fi
 
 sudo apt update
-sudo apt full-upgrade
-# sudo apt-get install software-properties-common
-# sudo add-apt-repository ppa:openjdk-r/ppa
+sudo apt full-upgrade -y
+sudo apt dist-upgrade -y
 sudo apt install -y build-essential bc g++-multilib libc6-dev lib32ncurses5 lib32ncurses5-dev lib32z1 unzip flex vim zip flex bison gperf curl zlib1g zlib1g-dev tofrodos libxml2-utils policycoreutils tree repo git openjdk-8-jdk repo libncurses5-dev libssl-dev openssl zlibc minizip libidn11-dev libidn11
 if [ 'WSL' == ${DISTRO} ]; then
     sudo apt remove -y android-tools-adb android-tools-fastboot
@@ -66,5 +65,5 @@ git config --global credential.helper cache
 # git config --global i18n.commitencoding utf-8
 
 # setup for android build environment
-sudo update-alternatives --config java
-sudo update-alternatives --config javac
+# sudo update-alternatives --config java
+# sudo update-alternatives --config javac
